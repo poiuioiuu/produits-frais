@@ -6,51 +6,6 @@
     <title>L'accès aux produits frais chez les autochtones</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <style>
-    /* Pour les écrans de moins de 768px */
-@media (max-width: 768px) {
-    :root {
-        --sidebar-width: 60px; /* Réduire la largeur de la barre latérale */
-    }
-/* Style pour la barre latérale */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Barre latérale cachée par défaut */
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    transition: left 0.3s ease; /* Animation pour l'ouverture */
-}
-
-/* Lorsque la barre latérale est active */
-.sidebar.active {
-    left: 0; /* Affiche la barre latérale */
-}
-
-/* Style pour les boutons de navigation */
-.nav-button {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    padding: 10px;
-    background-color: #444;
-    color: #fff;
-    cursor: pointer;
-    z-index: 10;
-}
-
-/* Media query pour les écrans plus petits */
-@media (max-width: 768px) {
-    /* Ajout de marges ou de padding pour améliorer l'affichage sur mobile */
-    .sidebar {
-        width: 200px;
-    }
-
-    .nav-button {
-        top: 10px;
-        left: 10px;
-    }
-}
 
     
     .nav-button {
@@ -78,28 +33,23 @@
     }
 }
 
-/* Pour les écrans de moins de 480px */
-@media (max-width: 480px) {
-    :root {
-        --sidebar-width: 50px;
+@media (max-width: 768px) {
+    body {
+        transform: scale(0.4);
+        transform-origin: top left;
+        width: 250%;
+        overflow-x: hidden;
     }
-
-    .nav-button span {
-        display: none; /* Masquer le texte des boutons dans la barre latérale */
+    
+    .sidebar {
+        font-size: 0.8em; /* Réduit la taille du texte dans la barre latérale */
     }
-
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .quiz-content {
-        padding: 20px;
-    }
-
-    .quiz-option {
-        padding: 15px;
+    
+    .nav-button {
+        padding: 5px 10px; /* Réduit les boutons */
     }
 }
+
    
  * {
             margin: 0;
