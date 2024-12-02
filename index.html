@@ -563,6 +563,27 @@
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
             });
 
+            document.addEventListener('DOMContentLoaded', function () {
+    // Ajouter un événement de clic sur les boutons de navigation
+    document.querySelectorAll('.nav-button').forEach(button => {
+        button.addEventListener('click', () => {
+            // Vérifier si l'écran est plus petit que 768px (mobile/tablette)
+            if (window.innerWidth <= 768) {
+                // Fermer la barre latérale en retirant la classe 'active'
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.classList.remove('active');
+            }
+        });
+    });
+    
+    // Vous pouvez aussi ajouter un événement pour fermer la barre latérale si un clic est effectué ailleurs
+    document.querySelector('.sidebar').addEventListener('click', (event) => {
+        if (event.target === document.querySelector('.sidebar')) {
+            document.querySelector('.sidebar').classList.remove('active');
+        }
+    });
+});
+
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
             });
