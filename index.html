@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'accès aux produits frais chez les autochtones</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
+<style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         :root {
             --sidebar-width: 80px;
-            --accent-color: #007AFF;
+            --accent-color: #A04D29; /* Couleur marron terre */
+            --highlight-color: #D9893E; /* Orange terre cuite */
+            --bg-color: #2C1B18; /* Fond brun foncé */
+            --border-color: #D7A15D; /* Or pâle */
         }
 
         body {
-            background-color: #000;
-            color: #fff;
+            background-color: var(--bg-color);
+            color: #FFF;
             overflow: hidden;
         }
 
@@ -31,9 +34,9 @@
             top: 0;
             width: var(--sidebar-width);
             height: 100vh;
-            background: rgba(28, 28, 28, 0.95);
-            backdrop-filter: blur(20px);
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(44, 27, 24, 0.95);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -47,7 +50,7 @@
             height: 60px;
             border: none;
             background: none;
-            color: #fff;
+            color: #FFF;
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,7 +80,7 @@
         }
 
         .nav-button.active {
-            background: var(--accent-color);
+            background: var(--highlight-color);
         }
 
         /* Contenu principal */
@@ -88,57 +91,57 @@
             position: relative;
             overflow: hidden;
         }
-#theme4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 40px;
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-}
 
-#theme4 .cards-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    perspective: 1000px;
-}
+        #theme4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #2C1B18 0%, #4E3B2A 100%); /* Couleurs terreuses */
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
 
-#theme4 .card {
-    background: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
-    border-radius: 20px;
-    padding: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère */
-    transform-style: preserve-3d;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    max-width: 800px;
-    text-align: center;
-}
+        #theme4 .cards-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            perspective: 1000px;
+        }
 
-#theme4 .card:hover {
-    transform: rotateX(10deg) rotateY(10deg) scale(1.05);
-    background: rgba(255, 255, 255, 0.15); /* Fond plus lumineux au survol */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
+        #theme4 .card {
+            background: rgba(255, 255, 255, 0.1); 
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border-color); 
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 800px;
+            text-align: center;
+        }
 
-#theme4 .card h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #fff 0%, #888 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+        #theme4 .card:hover {
+            transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+            background: rgba(255, 255, 255, 0.15); 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
 
-#theme4 .card p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-}
+        #theme4 .card h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #D7A15D 0%, #A04D29 100%); /* Dégradé chaud */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
-        /* Styles des sections */
+        #theme4 .card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
         section {
             position: absolute;
             top: 0;
@@ -149,7 +152,7 @@
             visibility: hidden;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateY(100%);
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #2C1B18 0%, #4E3B2A 100%);
             padding: 60px 40px;
             display: flex;
             flex-direction: column;
@@ -177,13 +180,12 @@
             line-height: 1.2;
             max-width: 1000px;
             padding: 0 40px;
-            background: linear-gradient(to right, #fff, #666);
+            background: linear-gradient(to right, #D7A15D, #A04D29);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        /* Sections thématiques */
         .section-subtitle {
             font-size: 1.2rem;
             text-transform: uppercase;
@@ -206,7 +208,7 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
             transform-style: preserve-3d;
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -220,7 +222,7 @@
         .card h3 {
             font-size: 2rem;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #fff 0%, #888 100%);
+            background: linear-gradient(90deg, #D7A15D 0%, #A04D29 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -248,12 +250,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(160, 77, 41, 0.3);
         }
 
         .interactive-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 122, 255, 0.4);
+            box-shadow: 0 8px 20px rgba(160, 77, 41, 0.4);
         }
 
         /* Quiz Modal */
@@ -279,12 +281,12 @@
         }
 
         .quiz-content {
-            background: rgba(28, 28, 28, 0.95);
+            background: rgba(44, 27, 24, 0.95);
             border-radius: 20px;
             padding: 40px;
             max-width: 600px;
             width: 90%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
             transform: translateY(20px);
             transition: transform 0.3s ease;
         }
@@ -295,7 +297,7 @@
 
         .quiz-option {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-color);
             padding: 20px;
             margin: 10px 0;
             border-radius: 10px;
@@ -309,9 +311,11 @@
         }
 
         .quiz-option.selected {
-            background: rgba(0, 122, 255, 0.2);
+            background: rgba(160, 77, 41, 0.2);
             border-color: var(--accent-color);
         }
+</style>
+
     </style>
 </head>
 <body>
