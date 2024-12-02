@@ -5,6 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'accès aux produits frais chez les autochtones</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<script>
+    // Fonction pour afficher la section correspondante
+    function showSection(sectionId) {
+        // Désactiver toutes les sections actives
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Activer la section choisie
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+
+        // Mettre à jour l'état des boutons
+        const buttons = document.querySelectorAll('.nav-button');
+        buttons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Activer le bouton correspondant
+        const activeButton = document.querySelector(`.nav-button[onclick="showSection('${sectionId}')"]`);
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+    }
+
+    // Gestion du bouton interactif pour afficher le modal du quiz
+    document.querySelector('.interactive-button')?.addEventListener('click', () => {
+        const modal = document.querySelector('.quiz-modal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    });
+
+    // Gestion de la fermeture du modal
+    document.querySelector('.quiz-modal')?.addEventListener('click', (e) => {
+        if (e.target.classList.contains('quiz-modal')) {
+            e.target.classList.remove('active');
+        }
+    });
+</script>
 <style>
         * {
             margin: 0;
